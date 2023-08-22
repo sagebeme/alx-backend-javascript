@@ -9,7 +9,7 @@ function countStudents(path) {
     throw new Error('Cannot load the database');
   }
 
-  data = daat.toString().split('\n');
+  data = data.toString().split('\n');
 
   let students = data.filter((item) => item);
 
@@ -37,3 +37,5 @@ function countStudents(path) {
     );
   }
 }
+
+module.exports = countStudents;
