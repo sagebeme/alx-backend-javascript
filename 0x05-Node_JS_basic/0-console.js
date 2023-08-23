@@ -1,4 +1,4 @@
-function displayMessage (string) {
+function displayMessage(string) {
   process.stdout.write(string);
 }
 
