@@ -7,6 +7,47 @@ JavaScriptES6
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/75862d67ca51a042003c.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220617T231326Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=74ee7d7bb4ab94184148496ecc48a121ddfe8e5502e3be36a047a30ee75f82c0)
 
+---
+
+## What does each file do?
+
+Each answer is the **problem the file solves**. Run with `npm run dev <n>-main.js` unless noted.
+
+### **What does `0-promise.js` do?**  
+It exports a function that **returns a Promise** (e.g. `getResponseFromAPI()`). You learn to create and return a Promise.
+
+### **What does `1-promise.js` do?**  
+It exports **`getFullResponseFromAPI(success)`**: when `success` is true, the Promise resolves with `{ status: 200, body: 'Success' }`; when false, it rejects with an Error. You practice resolve vs reject.
+
+### **What does `2-then.js` do?**  
+It exports **`handleResponseFromAPI(promise)`** that appends `.then` and `.catch` to the promise: on resolve return `{ status: 200, body: 'success' }`, on reject return an empty Error object, and always log "Got a response from the API".
+
+### **What does `3-all.js` do?**  
+It exports **`handleProfileSignup()`** that uses **`Promise.all`** on `uploadPhoto()` and `createUser()` from `utils.js`, then logs `body firstName lastName` (or handles errors with "Signup system offline").
+
+### **What does `4-user-promise.js` do?**  
+It exports **`signUpUser(firstName, lastName)`** that returns a **resolved** Promise with the object `{ firstName, lastName }`.
+
+### **What does `5-photo-reject.js` do?**  
+It exports **`uploadPhoto(fileName)`** that returns a Promise **rejecting** with an Error saying `fileName cannot be processed`.
+
+### **What does `6-final-user.js` do?**  
+It exports **`handleProfileSignup(firstName, lastName, fileName)`** that calls `signUpUser` and `uploadPhoto`, then uses **`Promise.allSettled`** and returns an array of `{ status, value }` or `{ status, reason }` for each promise.
+
+### **What does `7-load_balancer.js` do?**  
+It exports **`loadBalancer(chinaDownload, USDownload)`** that returns the value of the **first promise that resolves** (using `Promise.race`).
+
+### **What does `8-try.js` do?**  
+It exports **`divideFunction(numerator, denominator)`** that returns numerator/denominator, or **throws** an error "cannot divide by 0" when denominator is 0.
+
+### **What does `9-try.js` do?**  
+It exports **`guardrail(mathFunction)`** that runs `mathFunction`, pushes its return value (or the error message if it throws) to a queue, then pushes "Guardrail was processed", and returns the queue array.
+
+### **What does `utils.js` do?**  
+It provides **`uploadPhoto()`** and **`createUser()`** that return resolved promises with fixed response shapes. Used by tasks 3 and 6; you don't change it.
+
+---
+
 Resources
 ---------
 
