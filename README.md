@@ -1,18 +1,24 @@
 # ALX Backend — JavaScript
 
+## Description
+
 Backend JavaScript track: **ES6 Promises**, **ES6 Classes**, **ES6 Data manipulation**, **Node.js basics**, and **Unit testing (Mocha/Chai/Sinon)**. This README explains **what each folder and file does** and **how to run the exercises** so you can follow or redo them yourself.
 
----
+## Structure
 
-## Repository structure
+* [0x01. ES6 Promise](./0x01-ES6_promise)
+* [0x02. ES6 Classes](./0x02-ES6_classes)
+* [0x03. ES6 Data manipulation](./0x03-ES6_data_manipulation)
+* [0x05. Node.js basic](./0x05-Node_JS_basic)
+* [0x06. Unittests in JS](./0x06-unittests_in_js)
 
 | Folder | Topic | What you'll practice |
 |--------|--------|----------------------|
-| `0x01-ES6_promise` | Promises & async | Promise, then/catch, async/await, try/catch |
-| `0x02-ES6_classes` | ES6 classes | class, constructor, getters/setters, inheritance |
-| `0x03-ES6_data_manipulation` | Arrays & structures | map, filter, reduce, Set, Map, TypedArrays |
-| `0x05-Node_JS_basic` | Node.js | Console, stdin, readFile (sync/async), HTTP server, Express |
-| `0x06-unittests_in_js` | Testing | Mocha, Chai, Sinon (spies, stubs), async tests, skip |
+| [0x01-ES6_promise](./0x01-ES6_promise) | Promises & async | Promise, then/catch, async/await, try/catch |
+| [0x02-ES6_classes](./0x02-ES6_classes) | ES6 classes | class, constructor, getters/setters, inheritance |
+| [0x03-ES6_data_manipulation](./0x03-ES6_data_manipulation) | Arrays & structures | map, filter, reduce, Set, Map, TypedArrays |
+| [0x05-Node_JS_basic](./0x05-Node_JS_basic) | Node.js | Console, stdin, readFile (sync/async), HTTP server, Express |
+| [0x06-unittests_in_js](./0x06-unittests_in_js) | Testing | Mocha, Chai, Sinon (spies, stubs), async tests, skip |
 
 ---
 
