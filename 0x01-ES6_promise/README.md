@@ -1,50 +1,126 @@
 0x01. ES6 Promises
 ==================
 
-JavaScriptES6
+JavaScript ES6
 
 - Sagebeme
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/75862d67ca51a042003c.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220617T231326Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=74ee7d7bb4ab94184148496ecc48a121ddfe8e5502e3be36a047a30ee75f82c0)
 
----
+This folder teaches **ES6 Promises**: creating promises, then/catch, Promise.all, Promise.race, allSettled, and throw/try. Run with `npm run dev <n>-main.js` or `npm test`.
 
-## What does each file do?
+Tasks
+-----
 
-Each answer is the **problem the file solves**. Run with `npm run dev <n>-main.js` unless noted.
+### 1. What does `0-promise.js` do?
 
-### **What does `0-promise.js` do?**  
-It exports a function that **returns a Promise** (e.g. `getResponseFromAPI()`). You learn to create and return a Promise.
+It exports a function that **returns a Promise** (e.g. `getResponseFromAPI()`). You learn to create and return a Promise. Run: `npm run dev 0-main.js`.
 
-### **What does `1-promise.js` do?**  
-It exports **`getFullResponseFromAPI(success)`**: when `success` is true, the Promise resolves with `{ status: 200, body: 'Success' }`; when false, it rejects with an Error. You practice resolve vs reject.
+**Repo:**
 
-### **What does `2-then.js` do?**  
-It exports **`handleResponseFromAPI(promise)`** that appends `.then` and `.catch` to the promise: on resolve return `{ status: 200, body: 'success' }`, on reject return an empty Error object, and always log "Got a response from the API".
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `0-promise.js`
 
-### **What does `3-all.js` do?**  
-It exports **`handleProfileSignup()`** that uses **`Promise.all`** on `uploadPhoto()` and `createUser()` from `utils.js`, then logs `body firstName lastName` (or handles errors with "Signup system offline").
+### 2. What does `1-promise.js` do?
 
-### **What does `4-user-promise.js` do?**  
-It exports **`signUpUser(firstName, lastName)`** that returns a **resolved** Promise with the object `{ firstName, lastName }`.
+It exports **`getFullResponseFromAPI(success)`**: when `success` is true, the Promise resolves with `{ status: 200, body: 'Success' }`; when false, it rejects with an Error. Run: `npm run dev 1-main.js`.
 
-### **What does `5-photo-reject.js` do?**  
-It exports **`uploadPhoto(fileName)`** that returns a Promise **rejecting** with an Error saying `fileName cannot be processed`.
+**Repo:**
 
-### **What does `6-final-user.js` do?**  
-It exports **`handleProfileSignup(firstName, lastName, fileName)`** that calls `signUpUser` and `uploadPhoto`, then uses **`Promise.allSettled`** and returns an array of `{ status, value }` or `{ status, reason }` for each promise.
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `1-promise.js`
 
-### **What does `7-load_balancer.js` do?**  
-It exports **`loadBalancer(chinaDownload, USDownload)`** that returns the value of the **first promise that resolves** (using `Promise.race`).
+### 3. What does `2-then.js` do?
 
-### **What does `8-try.js` do?**  
-It exports **`divideFunction(numerator, denominator)`** that returns numerator/denominator, or **throws** an error "cannot divide by 0" when denominator is 0.
+It exports **`handleResponseFromAPI(promise)`** that appends `.then` and `.catch` to the promise: on resolve return `{ status: 200, body: 'success' }`, on reject return an empty Error object, and always log "Got a response from the API". Run: `npm run dev 2-main.js`.
 
-### **What does `9-try.js` do?**  
-It exports **`guardrail(mathFunction)`** that runs `mathFunction`, pushes its return value (or the error message if it throws) to a queue, then pushes "Guardrail was processed", and returns the queue array.
+**Repo:**
 
-### **What does `utils.js` do?**  
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `2-then.js`
+
+### 4. What does `3-all.js` do?
+
+It exports **`handleProfileSignup()`** that uses **`Promise.all`** on `uploadPhoto()` and `createUser()` from `utils.js`, then logs `body firstName lastName` (or handles errors with "Signup system offline"). Run: `npm run dev 3-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `3-all.js`
+
+### 5. What does `4-user-promise.js` do?
+
+It exports **`signUpUser(firstName, lastName)`** that returns a **resolved** Promise with the object `{ firstName, lastName }`. Run: `npm run dev 4-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `4-user-promise.js`
+
+### 6. What does `5-photo-reject.js` do?
+
+It exports **`uploadPhoto(fileName)`** that returns a Promise **rejecting** with an Error saying `fileName cannot be processed`. Run: `npm run dev 5-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `5-photo-reject.js`
+
+### 7. What does `6-final-user.js` do?
+
+It exports **`handleProfileSignup(firstName, lastName, fileName)`** that calls `signUpUser` and `uploadPhoto`, then uses **`Promise.allSettled`** and returns an array of `{ status, value }` or `{ status, reason }` for each promise. Run: `npm run dev 6-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `6-final-user.js`
+
+### 8. What does `7-load_balancer.js` do?
+
+It exports **`loadBalancer(chinaDownload, USDownload)`** that returns the value of the **first promise that resolves** (using `Promise.race`). Run: `npm run dev 7-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `7-load_balancer.js`
+
+### 9. What does `8-try.js` do?
+
+It exports **`divideFunction(numerator, denominator)`** that returns numerator/denominator, or **throws** an error "cannot divide by 0" when denominator is 0. Run: `npm run dev 8-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `8-try.js`
+
+### 10. What does `9-try.js` do?
+
+It exports **`guardrail(mathFunction)`** that runs `mathFunction`, pushes its return value (or the error message if it throws) to a queue, then pushes "Guardrail was processed", and returns the queue array. Run: `npm run dev 9-main.js`.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `9-try.js`
+
+### 11. What does `utils.js` do?
+
 It provides **`uploadPhoto()`** and **`createUser()`** that return resolved promises with fixed response shapes. Used by tasks 3 and 6; you don't change it.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x01-ES6_promise`
+-   File: `utils.js`
 
 ---
 

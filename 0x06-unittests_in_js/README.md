@@ -1,58 +1,170 @@
-![](Top.png)
+0x06. Unittests in JS
+=====================
 
----
+This folder practices **unit testing in JavaScript** with Mocha, Node assert, Chai, and Sinon (spies, stubs, hooks, async tests). Run tests with `npm test <file>.test.js`.
 
-## What does each file do?
+Tasks
+-----
 
-Each answer is the **problem the file solves** and how to run it. Tests: `npm test <file>.test.js`.
+### 1. What does `0-calcul.js` do?
 
-### **What does `0-calcul.js` do?**  
-It exports **`calculateNumber(a, b)`** that **rounds** `a` and `b` and returns their **sum**. You practice a pure function that is easy to unit test.
+It exports **`calculateNumber(a, b)`** that **rounds** `a` and `b` and returns their **sum**. You practice a pure function that is easy to unit test. Run: `npm test 0-calcul.test.js`.
 
-### **What does `0-calcul.test.js` do?**  
-It **unit-tests** `calculateNumber` with the Node **assert** library: tests normal and edge cases (e.g. rounding 1.5, 3.7). Run: `npm test 0-calcul.test.js`.
+**Repo:**
 
-### **What does `1-calcul.js` do?**  
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `0-calcul.js`
+
+### 2. What does `0-calcul.test.js` do?
+
+It **unit-tests** `calculateNumber` with the Node **assert** library: tests normal and edge cases (e.g. rounding 1.5, 3.7).
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `0-calcul.test.js`
+
+### 3. What does `1-calcul.js` do?
+
 It exports **`calculateNumber(type, a, b)`** where `type` is `'SUM'`, `'SUBTRACT'`, or `'DIVIDE'`. It rounds `a` and `b` and performs the operation; for DIVIDE it returns `'Error'` if rounded `b` is 0.
 
-### **What does `1-calcul.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `1-calcul.js`
+
+### 4. What does `1-calcul.test.js` do?
+
 It tests all three operations and edge cases (e.g. divide by 0) using **assert**. Use **describe** to group tests.
 
-### **What does `2-calcul_chai.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `1-calcul.test.js`
+
+### 5. What does `2-calcul_chai.js` do?
+
 Same behavior as `1-calcul.js` (copy). Used so you can write the same tests with a different style.
 
-### **What does `2-calcul_chai.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `2-calcul_chai.js`
+
+### 6. What does `2-calcul_chai.test.js` do?
+
 It tests the same logic as 1-calcul but using **Chai's expect** (e.g. `expect(result).to.equal(6)`). You practice a BDD-style assertion library.
 
-### **What does `utils.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `2-calcul_chai.test.js`
+
+### 7. What does `utils.js` do?
+
 It exports **`Utils`** with a **`calculateNumber`** method (same logic as 0-calcul/1-calcul). Used by the payment modules so you can **spy** or **stub** it in tests.
 
-### **What does `3-payment.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `utils.js`
+
+### 8. What does `3-payment.js` do?
+
 It exports **`sendPaymentRequestToApi(totalAmount, totalShipping)`** that calls **`Utils.calculateNumber('SUM', totalAmount, totalShipping)`** and logs "The total is: &lt;result&gt;". You test that Utils.calculateNumber is called correctly.
 
-### **What does `3-payment.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `3-payment.js`
+
+### 9. What does `3-payment.test.js` do?
+
 It uses **Sinon spy** on `Utils.calculateNumber` and verifies it is called with `'SUM'`, 100, 20 when `sendPaymentRequestToApi(100, 20)` is called. You practice spying on a dependency.
 
-### **What does `4-payment.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `3-payment.test.js`
+
+### 10. What does `4-payment.js` do?
+
 Same as 3-payment.js (copy). Used for stub exercises.
 
-### **What does `4-payment.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `4-payment.js`
+
+### 11. What does `4-payment.test.js` do?
+
 It **stubs** `Utils.calculateNumber` to always return 10, verifies the stub is called with SUM, 100, 20, and uses a **spy on console.log** to verify "The total is: 10". You practice stubs and restoring them.
 
-### **What does `5-payment.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `4-payment.test.js`
+
+### 12. What does `5-payment.js` do?
+
 Same as 4-payment.js. Used for hook exercises.
 
-### **What does `5-payment.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `5-payment.js`
+
+### 13. What does `5-payment.test.js` do?
+
 It tests `sendPaymentRequestToApi` twice (100+20, 10+10) and verifies the logged message and that **console.log is only called once per test**. It uses **beforeEach** and **afterEach** to set up and restore a single spy on console.log.
 
-### **What does `6-payment_token.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `5-payment.test.js`
+
+### 14. What does `6-payment_token.js` do?
+
 It exports **`getPaymentTokenFromAPI(success)`**: when `success` is true, it returns a **resolved Promise** with `{ data: 'Successful response from the API' }`; otherwise it does nothing (or returns without resolving). You practice async behavior.
 
-### **What does `6-payment_token.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `6-payment_token.js`
+
+### 15. What does `6-payment_token.test.js` do?
+
 It **tests the async result** of `getPaymentTokenFromAPI(true)` using the **done** callback (or Promise return) so Mocha waits for the Promise. You practice testing async code.
 
-### **What does `7-skip.test.js` do?**  
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `6-payment_token.test.js`
+
+### 16. What does `7-skip.test.js` do?
+
 It contains a test suite where **one test fails** (e.g. "1 is equal to 3"). Your task is to **skip** that test (e.g. `it.skip`) so the suite passes without removing or fixing the failing assertion. You practice skipping tests temporarily.
+
+**Repo:**
+
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x06-unittests_in_js`
+-   File: `7-skip.test.js`
 
 ---
 
